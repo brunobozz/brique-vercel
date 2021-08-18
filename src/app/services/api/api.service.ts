@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -7,7 +8,8 @@ import { Injectable } from '@angular/core';
 export class ApiService {
   private USER_DOC = window.localStorage.getItem('doc');
   private API_TOKEN = window.localStorage.getItem('token');
-  private API_PREFIX = '/api/klabrique/v1/';
+  private API_URL = environment.apiUrl;
+  private API_PREFIX = environment.apiUrl + '/api/klabrique/v1/';
   private API_HEADERS = new HttpHeaders().append(
     'Authorization',
     '' + this.API_TOKEN
