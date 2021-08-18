@@ -1,0 +1,6 @@
+<ng-container [ngSwitch]="layout">
+  <app-layout-header-back *ngSwitchCase="Layouts.BackButton"></app-layout-header-back>
+  <app-layout-header *ngSwitchCase="Layouts.Main"></app-layout-header>
+  <app-layout-content></app-layout-content>
+  <app-layout-menu></app-layout-menu>
+</ng-container>

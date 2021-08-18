@@ -1,0 +1,53 @@
+@import "../../../styles/variables";
+
+.layout-menu {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  overflow: hidden;
+  background: $verde100;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 25%;
+    height: 64px;
+    color: $branco;
+    cursor: pointer;
+    z-index: 1;
+
+    &-icon {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    &-text {
+      font-size: 10px;
+    }
+  }
+
+  &-item.active {
+    background: $laranja200;
+  }
+
+  &-bg{
+    width: 25%;
+    height: 64px;
+    position: absolute;
+    background: $laranja200;
+    transition: 0.6s ease;
+    left:100%;
+  }
+
+  [class*="canal-klabin"]{left:0;}
+  [class*="meus-negocios"], .login{left:25%;}
+  [class*="novos-negocios"]{left:50%;}
+  [class*="fale-conosco"]{left:75%;}
+}

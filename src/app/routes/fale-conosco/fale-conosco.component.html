@@ -1,0 +1,64 @@
+<section class="fale-conosco container ps-3 pe-3 pt-4 pb-4">
+  <h3 class="text-verde200 fw-bold mb-3">Contato</h3>
+  <p>
+    Para entrar em contato com a Klanin, precisamos de algumas informações suas:
+  </p>
+
+  <div class="fale-conosco-form">
+    <form [formGroup]="contatoForm" (ngSubmit)="submitContato()">
+      <div class="mb-3">
+        <label for="nome" class="form-label fw-bold">Nome</label>
+        <input
+          type="text"
+          class="form-control text-center"
+          [ngClass]="{ 'is-invalid': validaCampo('nome') }"
+          formControlName="nome"
+          placeholder="Seu nome"
+        />
+        <span *ngIf="validaCampo('nome')" class="invalid-feedback"
+          >*Nome é obrigatório</span
+        >
+      </div>
+      <div class="mb-3">
+        <label for="telefone" class="form-label fw-bold">Telefone</label>
+        <input
+          type="text"
+          class="form-control text-center"
+          [ngClass]="{ 'is-invalid': validaCampo('telefone') }"
+          id="telefone"
+          name="telefone"
+          formControlName="telefone"
+          mask="(00) 0000-0000||(00) 00000-0000"
+          placeholder="Seu telefone principal"
+        />
+        <span *ngIf="validaCampo('telefone')" class="invalid-feedback"
+          >*Telefone é obrigatório</span
+        >
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label fw-bold">Email</label>
+        <input
+          type="email"
+          class="form-control text-center"
+          [ngClass]="{ 'is-invalid': validaCampo('email') }"
+          id="email"
+          name="EMAIL"
+          formControlName="email"
+          placeholder="Seu email"
+        />
+        <span *ngIf="validaCampo('email')" class="invalid-feedback"
+          >*Informe um e-mail válido</span
+        >
+      </div>
+      <div class="d-grid gap-2 mt-3">
+        <button
+          type="submit"
+          class="btn btn-laranja200 text-white mt-3"
+          [disabled]="contatoForm.invalid"
+        >
+          <span> ENTRAR EM CONTATO</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

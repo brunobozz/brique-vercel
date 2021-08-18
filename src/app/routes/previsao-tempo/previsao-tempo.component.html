@@ -1,0 +1,29 @@
+<div class="container ps-3 pe-3 pt-4 pb-4">
+  <h3 class="text-verde200 fw-bold mb-3">Previsão do Tempo</h3>
+  <p class="subtitle">
+    <b
+      >Escolha para qual unidade da Klabin você deseja visualizar a previsão do
+      tempo:</b
+    >
+  </p>
+  <div class="previsao-local mt-2">
+    <a *ngFor="let local of locais" [href]="local.link" target="_blank" class="previsao-local-item">
+      <div class="previsao-local-item-text">
+        <span class="previsao-local-item-text-cidade">{{ local.cidade }}</span>
+        <span class="previsao-local-item-text-estado">{{ local.estado }}</span>
+      </div>
+      <i class="fa fa-chevron-right"></i>
+    </a>
+  </div>
+
+  <div class="d-grid mt-4">
+    <a class="btn btn-outline-laranja200" href="https://www.yr.no/en" target="_blank">
+      Verificar outra localidade
+    </a>
+  </div>
+  <span class="small mt-3 d-block">
+    O site utilizado é o <b>YR</b>: é noruegês, mas você pode clicar na lupa no
+    canto direito superior, buscar a localização e clicar na opção correta
+    dentre as listadas.
+  </span>
+</div>

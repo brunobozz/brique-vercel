@@ -1,0 +1,9 @@
+<app-loading-spinner *ngIf="loading"></app-loading-spinner>
+<section class="meus-negocios bg-branco">
+  <app-context-menu
+    [loading]="loading"
+    [negocios]="dadosNegocios"
+    [menuRoutes]="menuRoutes"
+  ></app-context-menu>
+  <router-outlet></router-outlet>
+</section>

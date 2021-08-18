@@ -1,0 +1,22 @@
+.selectItems {
+  display: none;
+  position: fixed;
+  top: 54px;
+  bottom: 64px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: #ffffff;
+
+  .form-check {
+    border-bottom: 1px solid #cccccc;
+    padding: 0.7em 2.3em;
+  }
+  .form-check:last-child {
+    border: 0;
+  }
+}
+
+.selectItems.show {
+  display: block;
+}

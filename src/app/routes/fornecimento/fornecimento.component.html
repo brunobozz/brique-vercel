@@ -1,0 +1,51 @@
+<main class="pb-4 anima-fade-in">
+  <div *ngIf="origens.length !== 0" class="p-3">
+    <select
+      class="form-select"
+      #selectOrigem
+      aria-label="Default select example"
+      (change)="trocaOrigem(selectOrigem.value)"
+    >
+      <option *ngFor="let origem of origens" value="{{ origem.objnr }}">
+        Origem: {{ origem.objnr }}
+      </option>
+    </select>
+  </div>
+
+  <!-- <app-balance
+    [month]="month"
+    [fortnight]="fortnight"
+    [volumn]="volumn"
+    [delivered]="delivered"
+    [nextOrTotal]="nextOrTotal"
+  ></app-balance>
+
+  <app-cortile-disponibility
+    url="programacao-patio"
+  ></app-cortile-disponibility>
+
+  <app-quick-link
+    [title]="'Últimos pagamentos'"
+    [url]="'/' + activeMenu + '/ultimos-pagamentos'"
+  ></app-quick-link>
+
+  <div class="ms-3 me-3">
+    <app-payments-table [payments]="payments"></app-payments-table>
+  </div>
+
+  <app-quick-link
+    [title]="'Entrega de madeira'"
+    [url]="'/' + activeMenu + '/entrega-de-madeira'"
+    [text]="
+      'Veja aqui todas as informações sobre a entrega de madeira negociada com a Klabin.'
+    "
+  ></app-quick-link>
+
+  <app-quick-link
+    [title]="'Contrato'"
+    [url]="'/' + activeMenu + '/contrato'"
+    [text]="
+      'Aqui você encontra todas as informações sobre o seu contrato de parceiria com a Klabin.'
+    "
+  ></app-quick-link> -->
+</main>

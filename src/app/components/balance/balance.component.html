@@ -1,0 +1,67 @@
+<div class="balance">
+  <div class="wood">
+    <div class="wood-pie1"></div>
+    <div
+      class="wood-pie2"
+      style="--val:{{ value }}%; --per:{{ percent }};"
+    ></div>
+    <!-- <span class="percent1 text-danger fw-bold">{{ 100 - percent }}%</span> -->
+    <span class="percent2 text-verde100 fw-bold">{{ percent }}%</span>
+  </div>
+  <div class="balance-info mt-4 ms-3 me-3">
+    <h2 *ngIf="!month" class="fw-bold small">Divida restante:</h2>
+    <div *ngIf="month">
+      <span>{{ month }} - {{ fortnight }}ª Quinzena</span><br />
+      <span>Volume entregue:</span>
+    </div>
+    <div class="">
+      <span class="fs-1 fw-bold text-laranja200">{{ volumn }}</span>
+      <span class="ms-2 fw-bold small">ton</span>
+    </div>
+
+    <div *ngIf="month"><span class="fw-bold">OTA</span></div>
+    <div *ngIf="!month" class="mt-3">
+      <span class="fw-bold">{{ nextDate }}</span>
+      <br />
+      <span class="fs-6 lh-1">
+        Previsão para o<br />
+        pagamento da dívida
+      </span>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-around align-items-center bg-verde400 p-3">
+    <div class="text-center">
+      <div class="small fw-bold">
+        {{ !month ? "Já entreguei neste mês" : "Já entreguei" }}:
+      </div>
+      <span class="fs-1 fw-bold text-verde100 lh-1">{{ delivered }}</span>
+      <span class="small">ton{{ !month ? "" : "/mês" }}</span>
+    </div>
+    <div class="text-center">
+      <div class="small fw-bold">
+        {{ !month ? "Próxima entrega" : "Total contrato" }}:
+      </div>
+      <b class="fs-1 fw-bold text-verde100 lh-1">{{ nextOrTotal }}</b>
+      <span class="small">ton{{ !month ? "" : "/mês" }}</span>
+    </div>
+  </div>
+
+  <div class="links">
+    <div class="links-item">
+      <div>
+        <span class="fw-bold">Próxima visita: </span><br />
+        <span class="fw-bold fs-3 text-verde100">00/00</span>
+      </div>
+    </div>
+    <div class="links-item" routerLink="previsao-tempo">
+      <div class="weather-wrapper">
+        <img class="weather-image" src="./assets/imgs/weather.png" />
+        <span class="fw-bold">
+          Previsão<br />
+          do tempo
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

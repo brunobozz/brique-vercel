@@ -1,0 +1,13 @@
+<ul class="list-group list-group-flush">
+  <li class="list-group-item d-flex justify-content-between ps-0 pe-0">
+    <span class="fw-bold">Período</span>
+    <span class="fw-bold">Contratado / Entregue</span>
+  </li>
+  <li
+    class="list-group-item d-flex justify-content-between ps-0 pe-0"
+    *ngFor="let delivery of deliveries"
+  >
+    <span class="fw-bold">{{ delivery.date }}</span>
+    <span>{{ delivery.contract }} / {{ delivery.delivered }} ton</span>
+  </li>
+</ul>

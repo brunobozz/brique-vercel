@@ -1,0 +1,14 @@
+<ul class="list-group list-group-flush">
+  <li
+    class="list-group-item d-flex justify-content-between ps-0 pe-0"
+    *ngFor="let payment of payments"
+  >
+    <div>
+      <span class="fw-bold">{{ payment.date }}</span>
+      <span *ngIf="payment.fortnight" class="fortnight"
+        >{{ payment.fortnight }}ª quinzena</span
+      >
+    </div>
+    <span>R$ {{ payment.price }} - {{ payment.tons }} ton</span>
+  </li>
+</ul>

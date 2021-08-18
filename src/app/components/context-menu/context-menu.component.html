@@ -1,0 +1,19 @@
+<div class="context-menu">
+  <!-- <div class="text-center">
+    <div
+      *ngIf="loading"
+      class="spinner-border text-primary text-end"
+      role="status"
+    ></div>
+  </div> -->
+  <nav *ngIf="!loading" class="context-menu-nav">
+    <span
+      *ngFor="let negocio of negocios; let i = index"
+      (click)="goRoute(menuRoutes[i])"
+      class="context-menu-nav-item"
+      [ngClass]="{ active: activeMenu.includes(menuRoutes[i]) }"
+    >
+      {{ negocio.identificacao }}
+    </span>
+  </nav>
+</div>

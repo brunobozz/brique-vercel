@@ -1,0 +1,7 @@
+<div class="mt-5 ms-3 me-3">
+  <div [routerLink]="[url]" class="d-flex justify-content-between align-items-center text-verde100">
+    <span class="fw-bold fs-4">{{ title }}</span>
+    <i class="fa fa-chevron-right"></i>
+  </div>
+  <p *ngIf="text">{{ text }}</p>
+</div>

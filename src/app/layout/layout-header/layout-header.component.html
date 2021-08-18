@@ -1,0 +1,15 @@
+<header class="layout-header navbar bg-verde100">
+  <div class="ms-2">
+    <button class="btn fw-bold text-branco">Klabrique</button>
+  </div>
+  <div *ngIf="auth" class="me-2">
+    <button class="btn text-branco" [routerLink]="['/profile']">
+      <i class="fa fa-user"></i>
+      <span class="d-none"> Perfil</span>
+    </button>
+    <button class="btn text-white d-none" (click)="logout()">
+      <i class="fa fa-sign-out"></i>
+      <span class="d-none d-sm-inline"> Sair</span>
+    </button>
+  </div>
+</header>

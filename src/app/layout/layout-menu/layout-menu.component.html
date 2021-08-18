@@ -1,0 +1,11 @@
+<section class="layout-menu">
+  <div class="layout-menu-bg" [ngClass]="menuSelecionado"></div>
+  <div
+    *ngFor="let item of menuItem"
+    class="layout-menu-item"
+    [routerLink]="item.routerLink"
+  >
+    <i class="layout-menu-item-icon fa" [ngClass]="item.icone"></i>
+    <span class="layout-menu-item-text">{{ item.text }}</span>
+  </div>
+</section>

@@ -1,0 +1,55 @@
+<div class="pt-4 pb-4">
+  <div class="container">
+    <h3 class="text-verde200 fw-bold">Meus Dados</h3>
+    <p class="fw-bold">
+      Confira aqui seus dados cadastrados na Klabin e entre em contato para
+      atualizar, se necessário.
+    </p>
+    <div *ngIf="loading" class="m-4 text-center">
+      <div class="spinner-border text-primary" role="status"></div>
+    </div>
+    <div *ngIf="dados.length !== 0">
+      <div class="mt-3">
+        <span class="text-verde100 fw-bold small">Nome:</span><br />
+        <span>{{ dados.nome }}</span
+        ><br />
+      </div>
+      <div class="mt-3">
+        <span class="text-verde100 fw-bold small">CPF/CNPJ:</span><br />
+        <span *ngIf="dados.cnpj">{{ dados.cnpj }}</span>
+        <span *ngIf="dados.cpf">{{ dados.cpf }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="loadingOrigem" class="m-4 text-center">
+    <div class="spinner-border text-primary" role="status"></div>
+  </div>
+
+  <div *ngIf="origens.length !== 0" class="origens mt-4">
+    <div class="bg-verde200 text-branco p-3 fs-4">FORNECIMENTO DE MADEIRA</div>
+    <div class="container">
+      <div class="mt-3">
+        <span class="text-verde100 fw-bold">Origem da matéria prima:</span>
+      </div>
+      <div *ngFor="let origem of origens" class="mt-3">
+        <span class="fw-bold">{{ origem.fazenda }}</span
+        ><br />
+        <div>
+          <span class="fw-bold">Contrato: </span>
+          <span>{{ origem.contrato }}</span>
+        </div>
+        <div>
+          <span class="fw-bold">ObjNR: </span>
+          <span>{{ origem.objnr }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-grid mt-4 container">
+    <button class="btn btn-laranja200 text-branco mt-3" (click)="logout()">
+      <span> SAIR</span>
+    </button>
+  </div>
+</div>

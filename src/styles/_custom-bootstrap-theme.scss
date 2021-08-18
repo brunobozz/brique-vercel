@@ -1,0 +1,52 @@
+@import "./variables";
+
+$theme-colors: (
+  "primary": $verde100,
+  "secondary": $laranja200,
+  "success": $success,
+  "danger": $danger,
+  "info": $info,
+  "warning": $warning,
+);
+
+$custom-colors: (
+  //verdes
+  "verde100": $verde100,
+  "verde200": $verde200,
+  "verde300": $verde300,
+  "verde400": $verde400,
+  //laranjas
+  "laranja100": $laranja100,
+  "laranja200": $laranja200,
+  "laranja300": $laranja300,
+  "laranja400": $laranja400,
+  //amarelos
+  "amarelo100": $amarelo100,
+  "amarelo200": $amarelo200,
+  "amarelo300": $amarelo300,
+  "amarelo400": $amarelo400,
+  //cinzas
+  "preto": $preto,
+  "cinza200": $cinza200,
+  "cinza300": $cinza300,
+  "cinza400": $cinza400,
+  "branco": $branco
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// radio buttom color
+$component-active-bg: $laranja200;
+
+// accordion colors
+$accordion-button-active-bg: $verde400;
+$accordion-button-active-color: $verde100;
+
+// $font-sizes: (
+//   1: $h1-font-size,
+//   2: $h2-font-size,
+//   3: $h3-font-size,
+//   4: $h4-font-size,
+//   5: $h5-font-size,
+//   6: $h6-font-size,
+// );

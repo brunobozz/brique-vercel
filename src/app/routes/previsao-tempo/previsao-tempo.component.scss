@@ -1,0 +1,28 @@
+@import "../../../styles/variables";
+
+.previsao-local {
+  &-item {
+    background-color: $cinza400;
+    padding: 0.8em 1em;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $cinza200;
+    text-decoration: none;
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+
+      &-cidade {
+        font-weight: bold;
+        color: $verde100;
+      }
+    }
+    i {
+      color: $verde100;
+    }
+  }
+}

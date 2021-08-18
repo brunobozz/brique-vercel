@@ -1,0 +1,60 @@
+<section class="container ps-3 pe-3 pt-4 pb-4">
+  <h3 class="text-verde200 fw-bold mb-3">Área Restrita</h3>
+  <p class="fw-bold">
+    Insira seus dados de login para acessar as informações sobre os seus
+    negócios com a Klabin
+  </p>
+  <div class="login-form">
+    <form [formGroup]="loginForm" (ngSubmit)="submitLoginForm()">
+      <div class="mb-3">
+        <label for="doc" class="form-label fw-bold"
+          >CPF/CNPJ</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': validaCampo('doc') }"
+          formControlName="doc"
+          mask="CPF_CNPJ"
+          maxlength="18"
+        />
+        <div class="invalid-feedback small">CPF ou CNPJ inválidos</div>
+      </div>
+      <div class="mb-3">
+        <label for="senha" class="form-label fw-bold">Senha</label>
+        <input
+          type="password"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': validaCampo('password') }"
+          formControlName="password"
+        />
+      </div>
+      <div class="invalid-feedback small">Insira sua senha</div>
+      <div class="d-grid gap-2">
+        <button
+          type="submit"
+          class="btn btn-laranja200 text-white"
+          [disabled]="loading"
+        >
+          <span
+            *ngIf="loading"
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+          ></span>
+          <i *ngIf="!loading" class="fa fa-sign-in" aria-hidden="true"></i>
+          <span> ENTRAR</span>
+        </button>
+      </div>
+      <p class="mt-4 small">
+        Esqueceu sua senha?<br />
+        <span class="fw-bold text-laranja200">Clique aqui</span>
+      </p>
+    </form>
+  </div>
+  <p class="fw-bold">
+    Se você já possui algum tipo de parceria com a Klabin e quer ter acesso às
+    suas informações,
+    <span class="fw-bold text-laranja200" routerLink="/cadastro-usuario">Cadastre-se aqui</span>
+  </p>
+</section>

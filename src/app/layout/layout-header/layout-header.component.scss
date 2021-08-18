@@ -1,0 +1,13 @@
+.layout-header {
+  z-index: 101;
+  position: absolute;
+  width: 100%;
+  height: 54px;
+  top: 0px;
+}
+
+@media (max-width: 600px) {
+  .logout-text {
+    display: none;
+  }
+}

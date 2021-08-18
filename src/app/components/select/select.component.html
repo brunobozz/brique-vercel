@@ -1,0 +1,32 @@
+<div class="d-grid m-3">
+  <button
+    class="
+      btn btn-outline-cinza300 text-cinza200
+      d-flex
+      justify-content-between
+      align-items-center
+    "
+    (click)="showSelect()"
+  >
+    <span>{{ itemSelected }}</span>
+    <i class="fa fa-caret-down text-laranja200"></i>
+  </button>
+</div>
+
+<div class="selectItems" [class.show]="select">
+  <div class="container ps-3 pe-3 pt-4 pb-4">
+    <h3 class="text-verde200 fw-bold mb-3">{{ selectTitle }}</h3>
+    <p>{{ selectText }}</p>
+    <div class="form-check" *ngFor="let item of selectItems; let i = index">
+      <input
+        class="custom-control-input form-check-input"
+        type="radio"
+        name="selectItem"
+        id="item{{ i }}"
+        (click)="itemChange(item)"
+        [checked]="itemSelected === item"
+      />
+      <label class="form-check-label" for="item{{ i }}"> {{ item }} </label>
+    </div>
+  </div>
+</div>
